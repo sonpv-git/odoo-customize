@@ -11,8 +11,14 @@
         'security/sonha_employee_security.xml',
         'security/ir.model.access.csv',
         'views/sonha_employee_views.xml',
+        'views/hr_employee_action.xml',
 
     ],
+    'assets': {
+        'web.assets_backend': [
+            '/sonha_employee/static/src/template/menu_button_employee.xml'
+        ]
+    },
     'installable': True,
     'application': True,
     'license': 'LGPL-3',

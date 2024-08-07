@@ -16,6 +16,7 @@
                     <field name="date"/>
                     <field name="number"/>
                     <field name="level"/>
+                    <field name="status_employee"/>
                 </xpath>
                 <xpath expr="//field[@name='parent_id']" position="attributes">
                     <attribute name="invisible">True</attribute>
@@ -28,5 +29,6 @@
                 </xpath>
             </field>
         </record>
+
     </data>
 </odoo>
