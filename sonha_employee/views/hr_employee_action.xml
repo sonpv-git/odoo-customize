@@ -1,0 +1,77 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_hr_employee_custom" model="ir.actions.act_window">
+        <field name="name">Custom Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr.view_employee_tree"/>
+    </record>
+
+    <record id="action_hr_employee_custom_working" model="ir.actions.act_window">
+        <field name="name">Custom Employees working</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr.view_employee_tree"/>
+        <field name="domain">[('status_employee', '=', 'working')]</field>
+    </record>
+
+    <record id="action_hr_employee_custom_maternity_leave" model="ir.actions.act_window">
+        <field name="name">Custom Employees maternity_leave</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr.view_employee_tree"/>
+        <field name="domain">[('status_employee', '=', 'maternity_leave')]</field>
+    </record>
+
+     <record id="action_hr_employee_custom_quit_job" model="ir.actions.act_window">
+        <field name="name">Custom Employees quit_job</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr.view_employee_tree"/>
+        <field name="domain">[('status_employee', '=', 'quit_job')]</field>
+    </record>
+
+    <record id="action_hr_employee_custom_trial" model="ir.actions.act_window">
+        <field name="name">Custom Employees trial</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr.view_employee_tree"/>
+        <field name="domain">[('status_employee', '=', 'trial')]</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_hr_employee_custom"
+              name="Nhân viên (View Admin)"
+              parent="hr.menu_hr_root"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_employee_custom_all"
+              name="Tất cả"
+              parent="menu_hr_employee_custom"
+              action="action_hr_employee_custom"
+              sequence="0"/>
+
+    <menuitem id="menu_hr_employee_custom_working"
+              name="Đang làm việc"
+              parent="menu_hr_employee_custom"
+              action="action_hr_employee_custom_working"
+              sequence="1"/>
+
+    <menuitem id="menu_hr_employee_custom_working_maternity_leave"
+              name="Nghỉ thai sản"
+              parent="menu_hr_employee_custom"
+              action="action_hr_employee_custom_maternity_leave"
+              sequence="2"/>
+
+    <menuitem id="menu_hr_employee_custom_working_quit_job"
+              name="Nghỉ việc"
+              parent="menu_hr_employee_custom"
+              action="action_hr_employee_custom_quit_job"
+              sequence="3"/>
+
+    <menuitem id="menu_hr_employee_custom_working_trial"
+              name="Thử việc"
+              parent="menu_hr_employee_custom"
+              action="action_hr_employee_custom_trial"
+              sequence="4"/>
+</odoo>

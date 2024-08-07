@@ -32,6 +32,12 @@ class SonHaEmployee(models.Model):
 
     date = fields.Date('Ngày')
     number = fields.Integer('Số')
+    status_employee = fields.Selection([
+        ('working', "Đang làm việc"),
+        ('maternity_leave', "Nghỉ thai sản"),
+        ('quit_job', 'Nghỉ việc'),
+        ('trial', 'Thử việc')
+    ], string='Trạng thái làm việc')
 
     @api.onchange('list_employee')
     def _onchange_list_employee(self):
