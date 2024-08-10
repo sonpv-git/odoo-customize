@@ -39,6 +39,17 @@ class SonHaEmployee(models.Model):
         ('trial', 'Thử việc')
     ], string='Trạng thái làm việc')
 
+    # các field page hr setting
+    onboard = fields.Date('Ngày vào công ty')
+    type_contract = fields.Many2one('hr.contract', "Loại hợp đồng")
+    employee_code = fields.Char("Mã nhân viên")
+
+    # các field page infomation page 1
+
+
+
+    # các field page private infomation page 2
+
     @api.onchange('list_employee')
     def _onchange_list_employee(self):
         if self.list_employee:

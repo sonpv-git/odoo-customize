@@ -114,6 +114,10 @@ export class CriteriaPointsChartRenderer extends Component {
       }
     });
   }
+  updateChart(data) {
+    this.state.data = data;
+    this.renderChart();
+  }
 }
 
 CriteriaPointsChartRenderer.template = 'owl.CriteriaPointsChartRenderer';

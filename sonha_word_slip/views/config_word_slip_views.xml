@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_config_word_slip_tree" model="ir.ui.view">
+        <field name="name">config.word.slip.tree</field>
+        <field name="model">config.word.slip</field>
+        <field name="arch" type="xml">
+            <tree string="Config Word Slips" editable="bottom">
+                <field name="name"/>
+                <field name="paid"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="config_word_slip_action" model="ir.actions.act_window">
+        <field name="name">Config Word Slips</field>
+        <field name="res_model">config.word.slip</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

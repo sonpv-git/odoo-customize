@@ -100,6 +100,10 @@ export class RatioKPIChartRenderer extends Component {
       plugins: [ChartDataLabels] // Đảm bảo rằng plugin datalabels được thêm vào đây
     });
   }
+  updateChart(data) {
+    this.state.data = data;
+    this.renderChart();
+  }
 }
 
 RatioKPIChartRenderer.template = 'owl.RatioKPIChartRenderer';

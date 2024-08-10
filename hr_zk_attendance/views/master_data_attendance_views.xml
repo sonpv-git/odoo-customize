@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_master_data_attendance_form" model="ir.ui.view">
+        <field name="name">master.data.attendance.form</field>
+        <field name="model">master.data.attendance</field>
+        <field name="arch" type="xml">
+            <form string="Master Data Attendance">
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="attendance_time"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_master_data_attendance_tree" model="ir.ui.view">
+        <field name="name">master.data.attendance.tree</field>
+        <field name="model">master.data.attendance</field>
+        <field name="arch" type="xml">
+            <tree string="Master Data Attendance">
+                <field name="employee_id"/>
+                <field name="attendance_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_master_data_attendance" model="ir.actions.act_window">
+        <field name="name">Master Data Attendance</field>
+        <field name="res_model">master.data.attendance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_master_data_attendance"
+              name="Master Data Attendance"
+              parent="hr_attendance.menu_hr_attendance_root"
+              action="action_master_data_attendance"
+              sequence="20"/>
+</odoo>

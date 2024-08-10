@@ -105,6 +105,10 @@ export class KPIPlanChartRenderer extends Component {
       plugins: [ChartDataLabels] // Đảm bảo rằng plugin datalabels được thêm vào đây
     });
   }
+  updateChart(data) {
+    this.state.data = data;
+    this.renderChart();
+  }
 }
 
 KPIPlanChartRenderer.template = 'owl.KPIPlanChartRenderer';

@@ -116,6 +116,10 @@ export class OwlChartRenderer extends Component {
       plugins: [ChartDataLabels]
     });
   }
+  updateChart(data) {
+    this.state.data = data;
+    this.renderChart();
+  }
 }
 
 OwlChartRenderer.template = 'owl.OwlChartRenderer';

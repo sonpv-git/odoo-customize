@@ -1,10 +1,20 @@
 <templates xml:space="preserve">
-  <!-- Template cho Dashboard -->
   <t t-name="owl.OwlGreetDashboard" owl="1">
     <div class="container-fluid p-3">
       <div class="card mt-3">
         <div class="card-header">
           <h2 t-esc="state.title"/>
+          <div class="filters">
+            <select t-model="state.department_id">
+              <option t-att-value="''">Tất cả phòng ban</option>  <!-- Option mặc định cho tất cả phòng ban -->
+              <t t-foreach="state.departments" t-as="dept" t-key="dept.id">
+                <option t-att-value="dept.id" t-esc="dept.name"/>
+              </t>
+            </select>
+            <input type="date" placeholder="Ngày bắt đầu" t-model="state.start_date"/>
+            <input type="date" placeholder="Ngày kết thúc" t-model="state.end_date"/>
+            <button t-on-click="applyFilters" class="btn btn-primary">Áp dụng bộ lọc</button>
+          </div>
         </div>
         <div class="card-body scrollable">
           <div class="row">
