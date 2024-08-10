@@ -84,6 +84,10 @@ export class RatingAmountChartRenderer extends Component {
       plugins: [ChartDataLabels]
     });
   }
+  updateChart(data) {
+    this.state.data = data;
+    this.renderChart();
+  }
 }
 
 RatingAmountChartRenderer.template = 'owl.RatingAmountChartRenderer'; // Đảm bảo định nghĩa template mới

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_word_slip_root"
+              name="Đơn từ"
+              sequence="10"/>
+
+    <menuitem
+            id="menu_config"
+            name="Cấu hình"
+            parent="menu_word_slip_root"
+            sequence="100"/>
+
+    <menuitem id="menu_config_word_slip"
+              name="Cấu hình đơn từ"
+              parent="menu_config"
+              action="config_word_slip_action"
+              sequence="1"/>
+
+    <menuitem id="menu_config_shift"
+              name="Cấu hình ca đăng ký"
+              parent="menu_config"
+              action="config_shift_action"
+              sequence="2"/>
+
+    <menuitem id="menu_form_word_slip"
+              name="Đơn từ"
+              parent="menu_word_slip_root"
+              action="action_form_word_slip"
+              sequence="0"/>
+
+    <menuitem id="menu_register_shift"
+              name="Đơn đăng ký ca"
+              parent="menu_word_slip_root"
+              action="action_register_shift"
+              sequence="1"/>
+</odoo>

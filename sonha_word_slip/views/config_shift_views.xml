@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_config_shift_tree" model="ir.ui.view">
+        <field name="name">config.shift.tree</field>
+        <field name="model">config.shift</field>
+        <field name="arch" type="xml">
+            <tree string="Config Word Slips" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="config_shift_action" model="ir.actions.act_window">
+        <field name="name">Cấu hình ca đăng ký</field>
+        <field name="res_model">config.shift</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

@@ -6,27 +6,34 @@
             <field name="model">hr.employee</field>
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='parent_id']" position="after">
-                    <field name="department_ids" widget="many2many_tags"/>
-                    <field name="list_employee" widget="many2many_tags"/>
-                    <field name="lower_grade" widget="many2many_tags"/>
-                    <field name="kpi" widget="many2many_tags" domain="[('id', 'in', list_employee)]"/>
-                </xpath>
-                <xpath expr="//field[@name='work_email']" position="after">
-                    <field name="date"/>
-                    <field name="number"/>
-                    <field name="level"/>
-                    <field name="status_employee"/>
-                </xpath>
-                <xpath expr="//field[@name='parent_id']" position="attributes">
-                    <attribute name="invisible">True</attribute>
-                </xpath>
+<!--                ẩn đi các field k cần dùng đến trên form-->
                 <xpath expr="//field[@name='coach_id']" position="attributes">
                     <attribute name="invisible">True</attribute>
                 </xpath>
-                <xpath expr="//field[@name='department_id']" position="attributes">
+                <xpath expr="//page[@name='skills_resume']" position="attributes">
                     <attribute name="invisible">True</attribute>
                 </xpath>
+                <xpath expr="//h2/field[@name='job_title']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='category_ids']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_phone']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+<!--                kế thừa thêm field vào page hr setting (page 3)-->
+                <xpath expr="//page[@name='hr_settings']//field[@name='user_id']" position="after">
+                    <field name="employee_code"/>
+                </xpath>
+
+                <xpath expr="//page[@name='hr_settings']//field[@name='pin']" position="after">
+                    <field name="onboard"/>
+                    <field name="type_contract"/>
+                </xpath>
+
             </field>
         </record>
 

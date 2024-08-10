@@ -105,6 +105,10 @@ export class KPIAmountChartRenderer extends Component {
       plugins: [ChartDataLabels]
     });
   }
+  updateChart(data) {
+    this.state.data = data;
+    this.renderChart();
+  }
 }
 
 KPIAmountChartRenderer.template = 'owl.KPIAmountChartRenderer';

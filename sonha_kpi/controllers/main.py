@@ -8,7 +8,16 @@ class DataChart(http.Controller):
 
     @http.route("/check_method_get", auth='none', type='http', method=['GET'])
     def check_method_get(self, **values):
-        department_ids = request.env['hr.department'].sudo().search([])
+        department_id = values.get('department_id')
+        start_date = values.get('start_date')
+        end_date = values.get('end_date')
+
+        # Filter departments based on the department_id parameter
+        if department_id:
+            department_ids = request.env['hr.department'].sudo().search([('id', '=', int(department_id))])
+        else:
+            department_ids = request.env['hr.department'].sudo().search([])
+
         data = []
         for department_id in department_ids:
             complete, unfulfilled, processing = self.get_data_progress(department_id)
@@ -32,6 +41,12 @@ class DataChart(http.Controller):
                 'total': round(total, 2),
                 'result_amount': round(result_amount, 2),
             })
+        return json.dumps(data)
+
+    @http.route("/get_departments", auth='none', type='http', method=['GET'])
+    def get_departments(self, **values):
+        departments = request.env['hr.department'].sudo().search([])
+        data = [{'id': dept.id, 'name': dept.name} for dept in departments]
         return json.dumps(data)
 
     def get_data_progress(self, department_id):

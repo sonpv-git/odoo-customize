@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_word_slip_form" model="ir.ui.view">
+        <field name="name">form.word.slip.form</field>
+        <field name="model">form.word.slip</field>
+        <field name="arch" type="xml">
+            <form string="Đơn từ">
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="type"/>
+                        <field name="word_slip_id">
+                            <tree string="Loai nghỉ">
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                                <field name="level"/>
+                            </tree>
+                        </field>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_form_word_slip_tree" model="ir.ui.view">
+        <field name="name">form.word.slip.tree</field>
+        <field name="model">form.word.slip</field>
+        <field name="arch" type="xml">
+            <tree string="Đơn từ">
+                <field name="employee_id"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_form_word_slip" model="ir.actions.act_window">
+        <field name="name">Đơn từ</field>
+        <field name="res_model">form.word.slip</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
