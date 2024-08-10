@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_word_slip_tree" model="ir.ui.view">
+        <field name="name">word.slip.tree</field>
+        <field name="model">word.slip</field>
+        <field name="arch" type="xml">
+            <tree string="Word Slips">
+                <field name="from_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_word_slip_form" model="ir.ui.view">
+        <field name="name">word.slip.form</field>
+        <field name="model">word.slip</field>
+        <field name="arch" type="xml">
+            <form string="Word Slip">
+                <group>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="level"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="word_slip_action" model="ir.actions.act_window">
+        <field name="name">Word Slips</field>
+        <field name="res_model">word.slip</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
