@@ -7,7 +7,7 @@ class SonHaEmployee(models.Model):
 
     list_employee = fields.Many2many('hr.employee', 'ir_employee_group_rel',
                                      'employee_group_rel', 'employee_rel',
-                                     string='List Staff', compute="filter_list_employee", store=True, readonly=False)
+                                     string='List Staff')
 
     lower_grade = fields.Many2many('hr.employee', 'ir_lower_grade_id_rel',
                                    'lower_grade_id_rel', 'lower_grade_id',
