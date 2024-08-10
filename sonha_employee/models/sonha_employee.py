@@ -50,24 +50,24 @@ class SonHaEmployee(models.Model):
 
     # các field page private infomation page 2
 
-    @api.onchange('list_employee')
-    def _onchange_list_employee(self):
-        if self.list_employee:
-            return {'domain': {'kpi': [('id', 'in', self.list_employee.ids)]}}
-        else:
-            self.filter_list_employee()
-            return {'domain': {'kpi': []}}
-
-    @api.onchange('list_employee')
-    def filter_list_employee(self):
-        for r in self:
-            if len(r.lower_grade) > 0:
-                list_emp = []
-                for item in r.lower_grade:
-                    list_emp.append(item.id)
-                    list_emp.append(item.list_employee.ids)
-                flattened_list = [item for sublist in list_emp for item in
-                                  (sublist if isinstance(sublist, list) else [sublist])]
-                r.list_employee = flattened_list
-            else:
-                r.list_employee = None
+    # @api.onchange('list_employee')
+    # def _onchange_list_employee(self):
+    #     if self.list_employee:
+    #         return {'domain': {'kpi': [('id', 'in', self.list_employee.ids)]}}
+    #     else:
+    #         self.filter_list_employee()
+    #         return {'domain': {'kpi': []}}
+    #
+    # @api.onchange('list_employee')
+    # def filter_list_employee(self):
+    #     for r in self:
+    #         if len(r.lower_grade) > 0:
+    #             list_emp = []
+    #             for item in r.lower_grade:
+    #                 list_emp.append(item.id)
+    #                 list_emp.append(item.list_employee.ids)
+    #             flattened_list = [item for sublist in list_emp for item in
+    #                               (sublist if isinstance(sublist, list) else [sublist])]
+    #             r.list_employee = flattened_list
+    #         else:
+    #             r.list_employee = None
