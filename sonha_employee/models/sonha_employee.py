@@ -57,8 +57,8 @@ class SonHaEmployee(models.Model):
     expiration_date_passport = fields.Date("Ngày hết hạn"),
     place_of_issue_passport = fields.Char("Nơi cấp hộ chiếu"),
     number_visa = fields.Char("Số visa"),
-    Date_visa = fields.Char("Ngày cấp(visa)"),
-    expiration_date_visa = fields.Date("Ngày hết hạn(visa"),
+    date_visa = fields.Char("Ngày cấp(visa)"),
+    expiration_date_visa = fields.Date("Ngày hết hạn(visa)"),
     place_of_issue_visa = fields.Char("Nơi cấp(visa)")
     reunion_day = fields.Date("Ngày vào Đoàn"),
     place_reunion = fields.Char("Nơi vào(Đoàn)"),
